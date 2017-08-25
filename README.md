@@ -7,6 +7,16 @@ How do you set up `/etc/grid-security` for the Let's Encrypt CA?
 ## Getting your host certificate
 Follow the Let's Encrypt [Getting Started](https://letsencrypt.org/getting-started/) guide.
 
+For example:
+```
+git clone https://github.com/letsencrypt/letsencrypt
+cd letsencrypt/
+./letsencrypt-auto --debug certonly --standalone --email human@example.org -d example.org
+# cert in /etc/letsencrypt
+# then before it expires...
+./letsencrypt-auto renew
+```
+
 ## Setting up /etc/grid-security/host*.pem
 ```
 ln -s /etc/letsencrypt/live/*/cert.pem /etc/grid-security/hostcert.pem
