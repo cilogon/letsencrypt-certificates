@@ -2,7 +2,7 @@
 You get user certificates from [CILogon](https://cilogon.org/) but you also need host certificates.
 You looked over the list of [IGTF](https://igtf.net) CAs but they don't meet your needs.
 Why not use the [Let's Encrypt CA](https://letsencrypt.org/)?
-How do you set up `/etc/grid-security` for the Let's Encrypt CA?
+How do you set up `/etc/grid-security`?
 
 ## Getting your host certificate
 Follow the Let's Encrypt [Getting Started](https://letsencrypt.org/getting-started/) guide.
