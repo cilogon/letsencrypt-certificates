@@ -25,7 +25,7 @@ install : all
 clean :
 	$(RM) *.0 *.signing_policy *.pem.txt
 
-check : letsencryptauthorityx3.pem.txt letsencryptauthorityx4.pem.txt
+check : all
 	openssl verify -CApath . letsencryptauthorityx3.pem.txt
 	openssl verify -CApath . letsencryptauthorityx4.pem.txt
 
