@@ -28,7 +28,7 @@ chmod 0600 /etc/letsencrypt/archive/*/privkey*.pem # ugh!
 ```
 git clone https://github.com/cilogon/letsencrypt-certificates.git
 cd letsencrypt-certificates/
-make
+make check
 sudo make install
 ```
 
