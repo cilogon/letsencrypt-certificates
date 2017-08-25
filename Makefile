@@ -25,6 +25,10 @@ install : all
 clean :
 	$(RM) *.0 *.signing_policy *.pem.txt
 
+check : letsencryptauthorityx3.pem.txt letsencryptauthorityx4.pem.txt
+	openssl verify -CApath . letsencryptauthorityx3.pem.txt
+	openssl verify -CApath . letsencryptauthorityx4.pem.txt
+
 23c2f850.signing_policy : letsencryptauthorityx4.signing_policy.txt
 	$(LINK) letsencryptauthorityx4.signing_policy.txt 23c2f850.signing_policy
 4042bcee.signing_policy : isrgrootx1.signing_policy.txt
