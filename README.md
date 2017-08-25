@@ -21,3 +21,10 @@ cd letsencrypt-certificates/
 make
 sudo make install
 ```
+
+## Caveats
+Like other Internet CAs and unlike IGTF CAs, Let's Encrypt issues end entity certificates with subject DNs outside a controlled namespace (i.e., `"/CN=*"`), so the signing_policy file is not enforcing a strong namespace restriction.
+
+Let's Encrypt does not issue CRLs for end-entity certificates (see the [Certification Practice Statement](http://cps.root-x1.letsencrypt.org)).
+
+Make sure to have a process in place to renew your certificates (e.g., [Certbot](https://certbot.eff.org/)).
