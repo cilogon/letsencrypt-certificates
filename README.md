@@ -38,3 +38,29 @@ Like other Internet CAs and unlike IGTF CAs, Let's Encrypt issues end entity cer
 Let's Encrypt does not issue CRLs for end-entity certificates (see the [Certification Practice Statement](http://cps.root-x1.letsencrypt.org)).
 
 Make sure to have a process in place to renew your certificates (e.g., [Certbot](https://certbot.eff.org/)).
+
+## Troubleshooting
+
+```
+# hostname
+example.org
+# grid-proxy-init -debug -verify -cert /etc/grid-security/hostcert.pem -key /etc/grid-security/hostkey.pem -hours 1 -out /tmp/hostcerttest
+ 
+User Cert File: /etc/grid-security/hostcert.pem
+User Key File: /etc/grid-security/hostkey.pem
+ 
+Trusted CA Cert Dir: /etc/grid-security/certificates
+ 
+Output File: /tmp/hostcerttest
+Your identity: /CN=example.org
+Creating proxy ......++++++
+.....++++++
+Done
+Proxy Verify OK
+# openssl verify -CApath /etc/grid-security/certificates /etc/grid-security/hostcert.pem 
+/etc/grid-security/hostcert.pem: OK
+# if [ "`openssl x509 -in /etc/grid-security/hostcert.pem -noout -modulus`" = "`openssl rsa -in /etc/grid-security/hostkey.pem -noout -modulus`" ]; then echo "Match"; else echo "Different"; fi
+Match
+# openssl x509 -subject -noout -in /etc/grid-security/hostcert.pem 
+subject= /CN=example.org
+```
