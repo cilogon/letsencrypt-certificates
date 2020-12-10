@@ -16,7 +16,7 @@ targets = 23c2f850.signing_policy 4042bcee.signing_policy \
           dec71a0b.0 dd7d39a7.0 \
           isrgrootx1.pem \
           letsencryptauthorityx3.pem letsencryptauthorityx4.pem \
-	  lets-encrypt-r3.pem lets-encrypt-r4.pem
+          lets-encrypt-r3.pem lets-encrypt-r4.pem
 
 installfiles = $(targets) $(sources)
 
