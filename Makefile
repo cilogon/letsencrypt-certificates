@@ -32,7 +32,7 @@ install : all
 	$(INSTALL) $(installfiles) $(DESTDIR)$(installdir)
 
 clean :
-	$(RM) *.0 *.signing_policy *.pem
+	$(RM) $(targets) *.pem
 
 check : all
 	openssl verify -CApath . letsencryptauthorityx3.pem
