@@ -1,3 +1,0 @@
-access_id_CA   X509    '/C=US/O=Let\'s Encrypt/CN=Let\'s Encrypt Authority X3'
-pos_rights     globus  CA:sign
-cond_subjects  globus  '"/CN=*"'
